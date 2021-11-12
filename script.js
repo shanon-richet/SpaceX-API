@@ -102,7 +102,12 @@ for (let i = 1; i < 3; i++) {
     capsuleSize.innerHTML= "Size: " + json.heat_shield.size_meters + "meters"
 
     var capsuleFuel= document.createElement('li')
-    capsuleFuel.innerHTML= "Fuel: " + json.thrusters[0].fuel_1
+    capsuleFuel.innerHTML= "Fuel: " + json.thrusters[0].fuel_1 + ', ' + json.thrusters[0].fuel_2
+    var capsuleWeight= document.createElement('li')
+    capsuleWeight.innerHTML= "Mass: " + json.launch_payload_mass.kg + " kg"
+
+    capsuleFuel.innerHTML= "Fuel: " + json.thrusters[0].fuel_1 + ', ' + json.thrusters[0].fuel_2
+
 
     var imageCapsule = new Image()
     imageCapsule.src= json.flickr_images[2]
@@ -113,6 +118,7 @@ for (let i = 1; i < 3; i++) {
     capsule.appendChild(capsuleCapacity)
     capsule.appendChild(capsuleSize)
     capsule.appendChild(capsuleFuel)
+    capsule.appendChild(capsuleWeight)
     capsule.appendChild(capsuleDescription)
   })
 }
